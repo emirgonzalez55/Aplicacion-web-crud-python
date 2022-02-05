@@ -1,0 +1,154 @@
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+  padding-top: 100px;
+
+}
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="text"] {
+  margin-bottom: 10px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+/* Show it is fixed to the top */
+body {
+  padding-top: 4.5rem;
+}
+body.dark-theme img {
+  filter: brightness(.8) contrast(1.2);
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+      --color-bg: rgb(47, 47, 47);
+      --color-texto: #FDFEFE;
+  }
+
+  body.light-theme {
+      --color-bg: #FDFEFE;
+      --color-texto: #17202A;
+  }
+
+  img {
+      filter: brightness(.8) contrast(1.2);
+  }
+  
+}
+
+body {
+  background-color: var(--color-bg);
+}
+
+h1 {
+  color: var(--color-texto);
+}
+.lead{
+  color: var(--color-texto)
+}
+.boton{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+.container{
+  margin: auto;
+  width: 100%;
+  padding: 10px;
+  vertical-align:auto;
+  text-align: center;
+  
+}
+.col-md-3{
+  color: var(--color-texto)
+}
+.mensaje{
+  color: var(--color-texto)
+  
+}
+.Tablas{
+  color: var(--color-texto)
+}
+.themed-styles-col {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  background-color: rgba(86, 61, 124, .15);
+  border: 1px solid rgba(86, 61, 124, .2);
+}
+.themed-estilo-col {
+  margin: auto;
+  width: 50%;
+  background-color: rgba(86, 61, 124, .15);
+  border: 1px solid rgba(86, 61, 124, .2);
+}
+.Tablas {
+  margin: auto;
+  padding: 40px;
+  text-align: center;
+}
+.boton{
+  margin-left: auto;
+  margin-right: auto;
+  width: max-content;
+}
+.consulta{
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+  padding-top: 1px;
+}
+.buscar{
+  display: block;
+   width: 30%;
+   margin-left: auto;
+   margin-right: auto;
+
+}
+.Search{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+
+.user{
+  margin: auto;
+  background-color:white;
+}
+html {
+  min-height: 100%;
+  position: relative;
+}
+body {
+  margin: 0;
+  margin-bottom: 70px;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  padding-left: 30px;
+}
+.dropdown-toggle {
+  width: max-content;
+  align-items: center;
+  padding-left: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.dropdown-menu{
+  width: 100%;
+}

@@ -1,0 +1,43 @@
+{% extends "base/base.html" %}
+{% block content %}
+
+<!doctype html>
+<head>
+    <title>consulta</title>
+</head>
+
+<body>
+    <h1 class="Tablas"> 
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+            {{ message }}
+    {% endfor %}
+    {% endif %}
+    {% endwith %}    
+    </h1>
+    <main>
+
+        <table class='col-md-3 themed-estilo-col' style='border: solid 1px black;'>
+            <tr>
+                <th>ID</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Rendimiento</th>
+            </tr>
+            {% for resultado in resultados %}
+
+            <tr>
+                <td class='col-md-3 themed-styles-col'>{{ resultado.0 }}</td>
+                <td class='col-md-3 themed-styles-col'>{{ resultado.1 }}</td>
+                <td class='col-md-3 themed-styles-col'>{{ resultado.2 }}</td>
+                <td class='col-md-3 themed-styles-col'>{{ resultado.3 }}</td>                                                                         
+
+            </tr>
+            {% endfor %}
+
+
+        </table>
+</body> 
+</html>	
+{% endblock %}

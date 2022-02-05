@@ -1,0 +1,35 @@
+{% extends "base/base.html" %}
+{% block content %}
+<!doctype html>
+<head>
+  <title>procesadores</title>
+</head>
+    
+<body>
+    <h1 class="Tablas">Listado de Procesadores</h1>
+    <a class='btn btn-primary boton'  href='/addcpu'>Añadir procesadores</a>
+
+		<table class='col-md-3 themed-estilo-col' style='border: solid 1px black;'>
+		<tr>
+		<th>ID</th>
+		<th>Marca</th>
+		<th>Modelo</th>
+		<th>Rendimiento</th>
+		</tr>
+        {% for procesador in procesadores %}
+                
+					<tr>
+                        <td class='col-md-3 themed-styles-col'>{{ procesador.0 }}</td>
+						<td class='col-md-3 themed-styles-col'>{{ procesador.1 }}</td>
+						<td class='col-md-3 themed-styles-col'>{{ procesador.2 }}</td>
+                        <td class='col-md-3 themed-styles-col'>{{ procesador.3 }}</td>                                                                         
+						<td class='col-md-3 themed-styles-col'><a class="btn btn-secondary" href="editarcpu/{{procesador.0}}">Editar</a></td>
+                        <td class='col-md-3 themed-styles-col'><a class="btn btn-danger" href="/eliminarcpu/{{procesador.0}}">Eliminar</a></td>
+					</tr>
+
+        {% endfor %}
+			
+		</table>
+</body> 
+</html>	
+{% endblock %}
