@@ -48,15 +48,26 @@ def registrar():
     if request.method == 'POST':
         nombre = request.form["nombre"]
         password = request.form["password"]
+        password1 = request.form["password1"]
         password_encode = password.encode("utf-8")
         password_encriptado = bcrypt.hashpw(password_encode ,encriptado)
         mycursor = mydb.cursor()
-        sql = "INSERT INTO usuarios (nombre, password) VALUES (%s, %s)"
-        mycursor.execute(sql,(nombre, password_encriptado))
-        mydb.commit()
-        flash('Usuario creado con exito')
-        return redirect(url_for('registrar'))
-        
+        resultados = mycursor.execute("SELECT * FROM usuarios WHERE nombre=%s ",(nombre,))
+        datos = mycursor.fetchone()
+        if datos == None:
+            if password == password1: 
+                mycursor = mydb.cursor()
+                sql = "INSERT INTO usuarios (nombre, password) VALUES (%s, %s)"
+                mycursor.execute(sql,(nombre, password_encriptado))
+                mydb.commit()
+                flash('Usuario creado con exito' , 'exito')
+                return redirect(url_for('registrar'))
+            else:
+                flash('¡Las contraseñas no coinciden!', 'error')
+                return redirect(url_for('registrar'))
+        else:
+            flash('¡El usuario ya existe!', 'error')
+            return redirect(url_for('registrar'))
     return render_template('registrar.html')
 
 @app.route("/inicio")
