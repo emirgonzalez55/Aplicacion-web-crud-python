@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
   </head>
-    
+<body id="modooscuro">    
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="/inicio">CPUS</a>
@@ -32,32 +32,32 @@
       </ul>
       <form class="d-flex" action="/consultas" method="POST" >
 
-        <input type="search" required name ="consulta" class="form-control me-2 Search " id="floatingInput" placeholder="Buscar">
-        <button class="btn btn-outline-success buscar" type="submit">Buscar</button>>
+        <input type="search" pattern="[A-Za-z0-9\s_-]{1,100}" required name ="consulta" class="form-control me-2 Search " id="floatingInput" placeholder="Buscar">
+        <button class="btn btn-outline-success buscar" type="submit">Buscar</button>
       </form>
       <div class="dropdown text-end">
         <a href="" class="d-block link-light text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
           <img src="{{ url_for('static', filename='img/login.png') }}" alt="mdo" width="32" height="32" class="rounded-circle">
         </a>
-        <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-lg-end " aria-labelledby="dropdownUser1">
+        <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end " aria-labelledby="dropdownUser1">
           <li><a class="dropdown-item " href="#">Usuario:{{session['nombre'] }}</a></li>
-          <li><a class="dropdown-item" href="#" id="boton">Modo oscuro</a></li>
+          <li><button class="dropdown-item" id="boton">Modo oscuro</button></li>
           <li><hr class="dropdown-divider"></li>
-          <li><a class="dropdown-item active" action="" href="/logout">Cerrar sesion</a></li>
+          <li><a class="dropdown-item active" href="/logout">Cerrar sesion</a></li>
         </ul>
   </div>
 </div>   
 </nav>
-  <div class="footer lead">
-    <footer class="py-3 my-4 border-top">
-        <div class="">
-            <span class="">&copy; 2022 Emir S.A</span>
-        </div>
-    </footer>
-  </div>
+<div>
+  <footer class="py-2 lead">
+    <div>
+      <span>&copy; 2022 Emir S.A</span>
+    </div>
+  </footer>
+</div>
 
- <body>
-    <script src="{{ url_for('static', filename='css/modo.js') }}"></script>
+    <script id="tematable"></script>
+    <script src="{{ url_for('static', filename='css/modo-oscuro.js') }}"></script>
     <script src="{{ url_for('static', filename='css/bootstrap.bundle.min.js') }}"></script>
 </body>
 </html>
