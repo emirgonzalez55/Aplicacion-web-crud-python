@@ -10,7 +10,7 @@
   </head>
   
   
-  <body class="text-center">
+  <body id="modooscuro" class="text-center">
     
 <main class="form-signin">
   <form action="/" method="POST" >
@@ -55,9 +55,8 @@
   </div>
 </nav>
 
-<body>
-    <script src="{{ url_for('static', filename='css/modo.js') }}"></script>
+
+    <script id="tematable"></script>
+    <script src="{{ url_for('static', filename='css/modo-oscuro.js') }}"></script>
 </body>
-
 </html>
-

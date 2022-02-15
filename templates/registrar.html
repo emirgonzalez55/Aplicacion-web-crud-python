@@ -14,7 +14,7 @@
 
     
   </head>
-  <body class="text-center">
+  <body id="modooscuro" class="text-center">
     
 <main class="form-signin">
   <form action="registrar" method="POST" >
@@ -29,12 +29,23 @@
       <input type="password" name="password" pattern="[A-Za-z0-9_-]{4,8}" title="Minimo 4 caracteres máximo 8, No se permiten caracteres especiales" required class="form-control" id="floatingPassword" placeholder="Password">
       <label for="floatingPassword">Contraseña</label>
     </div>
+    <div class="form-floating">
+      <input type="password" name="password1" pattern="[A-Za-z0-9_-]{4,8}" title="Minimo 4 caracteres máximo 8, No se permiten caracteres especiales" required class="form-control" id="floatingPassword" placeholder="Password">
+      <label for="floatingPassword">Repita la contraseña</label>
+    </div>
     <button class="w-100 btn btn-lg btn-primary"  type="submit">Registrarse</button>
-    {% with messages = get_flashed_messages() %}
+    {% with messages = get_flashed_messages(category_filter=["exito"])%}
     {% if messages %}
     {% for message in messages %}
         <p class="mensaje">{{ message }} <br>
         <a href="/">Inciar sesion </a></p>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    {% with messages = get_flashed_messages(category_filter=["error"]) %}
+    {% if messages %}
+    {% for message in messages %}
+        <p class="mensaje">{{ message }}</p>
     {% endfor %}
     {% endif %}
     {% endwith %}
@@ -55,7 +66,9 @@
 
 
 
-
+    <script id="tematable"></script>
+    <script src="{{ url_for('static', filename='css/modo-oscuro.js') }}"></script>
+</body>
 <html>
   
 

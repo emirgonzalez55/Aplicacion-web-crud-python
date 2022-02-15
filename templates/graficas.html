@@ -9,22 +9,24 @@
     <h1 class="Tablas">Listado de Graficas</h1>
     <a class='btn btn-primary boton'  href='/addgpu'>Añadir graficas</a>
 
-		<table class='col-md-3 themed-estilo-col' style='border: solid 1px black;'>
+		<table id="tematable" class='table table-striped table-bordered table-hover'>
 		<tr>
 		<th>ID</th>
 		<th>Marca</th>
 		<th>Modelo</th>
 		<th>Rendimiento</th>
+		<th>Editar</th>
+		<th>Eliminar</th>
 		</tr>
         {% for grafica in graficas %}
                 
 					<tr>
-                        <td class='col-md-3 themed-styles-col'>{{ grafica.0 }}</td>
-						<td class='col-md-3 themed-styles-col'>{{ grafica.1 }}</td>
-						<td class='col-md-3 themed-styles-col'>{{ grafica.2 }}</td>
-                        <td class='col-md-3 themed-styles-col'>{{ grafica.3 }}</td>                                                                         
-						<td class='col-md-3 themed-styles-col'><a class="btn btn-secondary" href="editargpu/{{grafica.0}}">Editar</a></td>
-                        <td class='col-md-3 themed-styles-col'><a class="btn btn-danger" href="/eliminargpu/{{grafica.0}}">Eliminar</a></td>
+                        <td class='col-md-1'>{{ grafica.0 }}</td>
+						<td class='col-md-3'>{{ grafica.1 }}</td>
+						<td class='col-md-3'>{{ grafica.2 }}</td>
+                        <td class='col-md-3'>{{ grafica.3 }}</td>                                                                         
+						<td class='col-md-1'><a class="btn btn-secondary" href="editargpu/{{grafica.0}}">Editar</a></td>
+                        <td class='col-md-2'><a class="btn btn-danger" href="/eliminargpu/{{grafica.0}}">Eliminar</a></td>
 					</tr>
 
         {% endfor %}

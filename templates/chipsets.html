@@ -9,22 +9,24 @@
     <h1 class="Tablas">Listado de Chipsets</h1>
     <a class='btn btn-primary boton'  href='/addchipset'>Añadir chipset</a>
 
-		<table class='col-md-3 themed-estilo-col' style='border: solid 1px black;'>
+		<table id="tematable" class='table table-striped table-bordered table-hover'>
 		<tr>
 		<th>ID</th>
 		<th>Marca</th>
 		<th>Modelo</th>
 		<th>Rendimiento</th>
+		<th>Editar</th>
+		<th>Eliminar</th>
 		</tr>
         {% for chipset in chipsets %}
                 
 					<tr>
-                        <td class='col-md-3 themed-styles-col'>{{ chipset.0 }}</td>
-						<td class='col-md-3 themed-styles-col'>{{ chipset.1 }}</td>
-						<td class='col-md-3 themed-styles-col'>{{ chipset.2 }}</td>
-                        <td class='col-md-3 themed-styles-col'>{{ chipset.3 }}</td>                                                                         
-						<td class='col-md-3 themed-styles-col'><a class="btn btn-secondary" href="editarchipset/{{chipset.0}}">Editar</a></td>
-                        <td class='col-md-3 themed-styles-col'><a class="btn btn-danger" href="/eliminarchipset/{{chipset.0}}">Eliminar</a></td>
+                        <td class='col-md-1'>{{ chipset.0 }}</td>
+						<td class='col-md-3'>{{ chipset.1 }}</td>
+						<td class='col-md-3'>{{ chipset.2 }}</td>
+                        <td class='col-md-3'>{{ chipset.3 }}</td>                                                                         
+						<td class='col-md-1'><a class="btn btn-secondary" href="editarchipset/{{chipset.0}}">Editar</a></td>
+                        <td class='col-md-2'><a class="btn btn-danger" href="/eliminarchipset/{{chipset.0}}">Eliminar</a></td>
 					</tr>
 
         {% endfor %}
