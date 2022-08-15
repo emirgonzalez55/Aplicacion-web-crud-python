@@ -19,12 +19,17 @@
     <main>
 
         <table  id="tematable" class='table table-striped table-bordered table-hover'>
+          
+            {% if resultados != []: %}
             <tr>
                 <th>ID</th>
                 <th>Marca</th>
                 <th>Modelo</th>
                 <th>Rendimiento</th>
             </tr>
+            {% else %}
+            {% endif %}
+
             {% for resultado in resultados %}
 
             <tr>
