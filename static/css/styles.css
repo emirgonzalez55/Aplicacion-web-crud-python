@@ -3,7 +3,6 @@ body.modo-oscuro img {
 }
 .modo-oscuro{
   background-color: rgb(47, 47, 47);
-
 }
 body.modo-oscuro h1 {
   color: #FDFEFE;
@@ -114,7 +113,8 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  padding-left: 20px;
+  padding-left: 1%;
+  padding-right: 1%;
   border-top: 1px solid
 }
 .dropdown-toggle {
@@ -125,4 +125,14 @@ footer {
 }
 .dropdown-menu{
   width: 50%;
+}
+.version{
+  text-align: right;
+  float: right;
+  max-width: max-content;
+  text-decoration: none;
+  color: #000;
+}
+body.modo-oscuro .version {
+  color: #FDFEFE;
 }
