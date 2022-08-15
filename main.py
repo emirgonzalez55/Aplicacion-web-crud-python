@@ -274,5 +274,12 @@ def editarchipset(id):
 
     return render_template('editarchipset.html', chipset = datos[0]) 
 
+@app.route("/version")
+def version():
+    if "nombre" in session:
+        return render_template('version.html') 
+    else:
+        return redirect(url_for("login"))    
+
 if __name__ == "__main__":
 	app.run(debug=True)   
