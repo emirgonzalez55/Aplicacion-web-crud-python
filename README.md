@@ -4,7 +4,7 @@ Esta aplicacion web permite el acceso a una base de datos de hardware.<br>
 
 Versión version 1.1.0 beta<br>
 
-Actualización	version 1.1.0 beta (1.2208152000)	Fecha: 15-08-2021<br>
+Actualización	version 1.1.0 beta (1.2208152000)	Fecha: 15-08-2022<br>
 • Corrección de errores.<br>
 • Funciones mejoradas.<br>
 • Mejoras visuales.<br>
