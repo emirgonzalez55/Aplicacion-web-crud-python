@@ -2,7 +2,7 @@
 Este proyecto es una aplicación web.<br>
 Esta aplicacion web permite el acceso a una base de datos de hardware.<br>
 
-Versión version 1.1.0 beta<br>
+Versión actual 1.1.0 beta
 
 Actualización	version 1.1.0 beta (1.2208152000)	Fecha: 15-08-2022<br>
 • Corrección de errores.<br>
